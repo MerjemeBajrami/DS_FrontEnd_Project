@@ -301,4 +301,165 @@ h1 {
 }
 
 
+/*this is erisa part*/
+
+#faq_{
+    display: flex;
+    margin-top:170px;
+    margin-left: 80px;
+    margin-right: 80px;
+    justify-content:space-around;
+    align-items:start;
+    position:relative;
+    gap: 2rem;
+    color:  #5a3f42;
+
+ }
+ #answers{
+    margin-top: 20px;
+ }
+
+ details {
+    margin: 15px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  summary {
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 10px 0;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] summary {
+    color: #e2687e;
+  }
+
+  details[open] summary::after {
+    content: '▲';
+    float: right;
+    font-size: 0.8em;
+    color: #e2687e;
+  }
+
+  summary::after {
+    content: 'ˇ';
+    float: right;
+    font-size: 0.8em;
+    color: #333;
+  }
+  .faq-content {
+    max-height: 100px; 
+    max-width: 400px; 
+    overflow-y: auto;
+    margin-top: 10px;
+    color: #5a3f42;
+    padding-right: 10px;;
+  }
+
+  .faq-content a {
+    color: #e2687e;
+    text-decoration: none;
+  }
+  .faq_title{
+    width: 45%;
+    /* padding: 40px;*/
+     margin-left:40px ;
+  }
+  .questions{
+    margin-left: 80px;
+   color:  #5a3f42;;
+  }
+  p{
+    font-size: medium;
+  }
+  #faq_more {
+    margin-top:20px;
+    color: #e2687e;
+    background-color: #f9e4e7;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
+}
+
+#faq_more:hover {
+    background-color: #e2687e;
+    color: #f6f6f6;
+}
+
+footer {
+  margin-top: 100px;
+  background-color:#c95567 ;
+  padding: 30px 20px;
+  color: white;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #c95567;
+}
+
+footer .columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .col1, .col2, .col3 {
+    width: 30%;
+    text-align: left;
+    line-height: 1.8rem;
+    /*align-items: center;*/
+    text-align: center
+    
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+  }
+  
+  footer ul li a i {
+    margin-right: 8px;
+    color: #ffe6e6;
+    font-size: 18px;
+  }
+  
+  footer ul li a:hover {
+    color: pink;
+  }
+  
+  .rowbottom {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .rowbottom p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 12px;
+  }
+
+
 

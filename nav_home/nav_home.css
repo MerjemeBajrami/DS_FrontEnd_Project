@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+html {
+  scroll-behavior: smooth;
+  font-family: Open Sans;
+}
+:root {
+  --color-primary: #ef5285;
+  --border-size: 3px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  width: 85%;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #f6f6f6;
+  border-radius: 50px;
+  padding: 10px 20px; /* Adjusted for smaller height */
+  
+  /* Sticky navigation */
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.left_nav{
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around; /* Reduced space between items */
+  padding: 0;
+  gap:10px;
+  
+}
+nav a {
+  text-decoration: none;
+  color: #bab1b2;
+  font-size: 16px;
+  
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transitions */
+}
+.nav-item {
+  display: inline-block;
+  padding: 8px 12px; /* Smaller padding for compactness */
+  border-radius: 30px; /* Rounded hover background */
+}
+.nav-item:hover {
+  color: #e2687e;
+  background-color: #f9e4e7; /* Background change on hover */
+}
+.nav-item.active {
+  color: #e2687e;
+  background-color: #f9e4e7;
+}
+
