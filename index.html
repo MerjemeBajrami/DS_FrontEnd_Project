@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS-FrontEnd-Project</title>
+    <title>Find Your Nanny</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+
+<body onload="loadCard()">
+
+    <header>
+        <div id="nav-placeholder"></div>
+    </header>
+    <main id="about_">
+
+        <div class="about_">
+            <img src="img/main_img.png" alt="">
+            <div class="main_text">
+                <p class="main_p">Connecting families to meet trusted childminders</p>
+
+            </div>
+        </div>
+    </main>
+
+
+    <section id="features_">
+        <div class="features_content">
+            <h2 class="features_h2">How Dado simplifies ChildCare</h2>
+            <p>Empowering Connections, Ensuring Peace of Mind</p>
+            <p>At Dado, we understand the importance of finding the perfect match between families and childminders. Our
+                platform is designed to make this journes no just easier, but also safer and more reliable for everyone
+                involved</p>
+        </div>
+    
+            <div class="features_cards">
+                <div class="card">
+                    <img src="img/post.png" alt="">
+                    <p>Post your needs</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, beatae!</p>
+                </div>
+                <div class="card">
+                    <img src="img/recieve.png" alt="">
+                    <p>Receive proposals</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, voluptates!
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="img/select.png" alt="">
+                    <p>Select your caregiver</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, aspernatur.</p>
+                </div>
+               
+            </div>
+            
+        </div>
+        <br><br>
+
+    </section>
+    <div id="sign_up"></div>
+
+
+   
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="navbar/nav.js"> </script>
     <script src="js/script.js"></script>
+    <script src="signin/signin.js"></script>
 </body>
+
 </html>
