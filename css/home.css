@@ -36,7 +36,7 @@ body {
     border-radius: 10px;
 }
 
-.center {
+#center {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -75,6 +75,6 @@ body {
     text-align: center;
 }
 
-.center::-webkit-scrollbar {
+#center::-webkit-scrollbar {
     display: none;
 }

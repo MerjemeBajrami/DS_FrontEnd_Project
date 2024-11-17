@@ -1,0 +1,269 @@
+
+
+  .post {
+    width: 500px;
+    background-color: #fff;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+ 
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .post-header .details {
+    flex-grow: 1;
+  }
+
+  .post-header .details h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .post-header .details h4:hover {
+    color:#e2687e ;
+    cursor: pointer;
+  }
+
+
+  .post-header .details p {
+    margin: 2px 0 0;
+    color: #666;
+    font-size: 12px;
+  }
+  .title{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: white;
+  }
+.title .fa-hands-holding-child{
+  color:#e2687e ;
+  font-size: 20px;
+}
+  .post-content {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .post-images {
+    display: flex;
+    overflow: hidden;
+    width: 95%;
+    gap: 3px;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 20px;
+   
+  }
+
+  .post-images img {
+    width: 49.7%;
+    height: auto;
+    object-fit: cover;
+    
+  }
+
+  .post-footer {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .post-footer #likes,
+  .post-footer #comments {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .post-footer #likes:hover,
+  .post-footer #comments:hover {
+    font-size: 14px;
+    color: #e2687e;
+    cursor: pointer;
+  }
+
+  .post-actions {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    width: 94%;
+    margin-bottom: 5px;
+    gap: 10px;
+   margin-top: 15px;
+   border-top: 1px solid #e0e0e0;
+   border-bottom: 1px solid #e0e0e0;
+  }
+
+  .fa-heart:hover,
+  .fa-comment:hover{
+    color: #e2687e;
+
+  }
+
+  .post-actions .act {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px; /* Expands clickable area */
+    transition: color 0.3s;
+  }
+  
+  .post-actions .act:hover {
+    color: #e2687e; /* Changes the color of the button */
+  }
+  
+  .post-actions .act i {
+    font-size: 20px;
+    color: #333; /* Default color of the icon */
+  }
+  
+  .post-actions .act:hover i {
+    color: #e2687e; /* Changes icon color when hovering over the button */
+  }
+  
+  
+
+  .post-actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .post-actions button:hover {
+    color: #007bff;
+  }
+
+  .post-comment {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+   
+  }
+
+  .post-comment input {
+    width: 93%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+ 
+   
+  }
+
+  .post-comment input:focus {
+    border-color: #e2687e;
+  }
+
+  #submit-comment{
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    
+    
+  }
+
+  #submit-comment:hover{
+    color: #e2687e;
+
+  }
+
+  /* Styling for the comment section */
+.comments-list {
+  margin-top: 15px;
+}
+
+/* Individual comment styling */
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Profile image */
+.comment-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Content container (username and text) */
+.comment-content {
+  flex-grow: 1;
+}
+
+/* Username styling */
+.comment-username {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Comment text styling */
+.comment-text {
+  margin-top: 5px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Delete button styling */
+.delete-comment {
+  background: none;
+  border: none;
+  color: #e2687e;
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.3s;
+  align-self: center;
+}
+
+/* Change color of delete button on hover */
+.delete-comment:hover {
+  color: #e2687e;
+}
+
+/* Initially hide the comments section */
+.comments-list.hidden {
+  display: none;
+}
+
+/* Styling for the comment section */
+.comments-list {
+  margin-top: 15px;
+  display: block; /* Show it once a comment is added */
+  border-top: 1px solid #ddd;
+}
+
+.comments-toggle{
+  border: none;
+  background-color: white;
+  color: #e2687e;
+  padding-left: 10px;
+  cursor: pointer;
+
+}
