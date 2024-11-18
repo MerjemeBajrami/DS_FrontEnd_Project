@@ -26,7 +26,7 @@ body {
     height: 40vh;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 0px; /* Reduces gap between profile and recent */
+    margin-bottom: 0px; 
     padding: 5px;
 }
 
