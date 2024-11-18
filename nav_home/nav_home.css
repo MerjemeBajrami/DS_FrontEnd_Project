@@ -15,13 +15,11 @@ html {
 nav {
   display: flex;
   width: 85%;
-  align-items: center;
+  align-items:center;
   margin: 0 auto;
   background-color: #f6f6f6;
   border-radius: 50px;
-  padding: 10px 20px; /* Adjusted for smaller height */
-  
-  /* Sticky navigation */
+  padding: 10px 20px; 
   position: fixed;
   top: 10px;
   left: 0;
@@ -32,10 +30,13 @@ nav {
   width: 100%;
   display: flex;
   list-style-type: none;
-  justify-content: space-around; /* Reduced space between items */
+  justify-content:center; 
   padding: 0;
   gap:10px;
   
+}
+.links{
+  margin-left: 17%;
 }
 nav a {
   text-decoration: none;
@@ -46,8 +47,8 @@ nav a {
 }
 .nav-item {
   display: inline-block;
-  padding: 8px 12px; /* Smaller padding for compactness */
-  border-radius: 30px; /* Rounded hover background */
+  padding: 8px 12px; 
+  border-radius: 30px; 
 }
 .nav-item:hover {
   color: #e2687e;
@@ -57,4 +58,3 @@ nav a {
   color: #e2687e;
   background-color: #f9e4e7;
 }
-
