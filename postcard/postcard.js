@@ -6,8 +6,7 @@ async function loadPostCard() {
 
     //populatePost(postData);
     createPosts(posts);
-    initializeAddPostFeature("add", "post-modal", "close-modal", "post-form");
-
+    
 
 }
 
