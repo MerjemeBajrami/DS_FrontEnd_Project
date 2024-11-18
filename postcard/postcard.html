@@ -9,52 +9,76 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Container for dynamic posts -->
-    <div id="post-container"></div>
+  <div class="add_post">
+    <p>Add post..</p>
+    <button id="add"><i class="fa-regular fa-square-plus"></i></button>
+</div>
 
-    <!-- Post template (hidden) -->
-    <div class="post" style="display: none;">
-        <div class="post-header">
-            <img id="profile-img" src="" alt="User Profile">
-            <div class="details">
-                <h4 id="username">Username</h4>
-                <p id="location">Time · Location</p>
-            </div>
-            <button class="title"><i class="fa-solid fa-hands-holding-child"></i></button>
-        </div>
-        <div class="post-content" id="content">
-            <!-- Content text will go here -->
-        </div>
-        <div class="post-images" id="images">
-            <!-- Images will be dynamically added here -->
-        </div>
-        <div class="post-actions">
-            <button class="act"><i class="fa-regular fa-heart"></i></button>
-            <button class="act"><i class="fa-regular fa-comment"></i></button>
-        </div>
-        <div class="post-footer">
-            <div id="likes">0 likes</div>
-            <div id="comments">0 Comments</div>
-        </div>
-        <div class="comments-list" id="comments-list">
-          <div class="comment">
-            <img class="comment-profile-img" src="../img/dado_profile.webp" alt="User Profile">
-            <div class="comment-content">
-                <span class="comment-username">Username</span>
-                <p class="comment-text">This is a comment text.</p>
-            </div>
-            <button class="delete-comment"></button>
-        </div>
-        </div>
-        <div class="post-comment">
-          
-          <input type="text" placeholder="Add a comment..." id="comment-input">
-          <button id="submit-comment"><i class="fa-regular fa-paper-plane"></i></button>
+<!-- Modal Structure (Hidden initially) -->
+<div id="post-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Create Your Post</h2>
+        <form id="post-form">
+            <label for="post-content">Post Content</label>
+            <textarea id="post-content" placeholder="Write something..."></textarea>
+
+            <label for="post-images">Add Images (URLs)</label>
+            <input type="text" id="post-images" placeholder="Enter image URLs separated by commas" />
+
+            <button type="submit">Submit Post</button>
+        </form>
+        <button id="close-modal" class="close-modal">Close</button>
+    </div>
+</div>
+
+
+  <!-- Container for dynamic posts -->
+  <div id="post-container"></div>
+
+  <!-- Post template (hidden) -->
+  <div class="post" style="display: none;">
+    <div class="post-header">
+      <img id="profile-img" src="" alt="User Profile">
+      <div class="details">
+        <h4 id="username">Username</h4>
+        <p id="location">Time · Location</p>
       </div>
-     
-      
+      <button class="title"><i class="fa-solid fa-hands-holding-child"></i></button>
+    </div>
+    <div class="post-content" id="content">
+      <!-- Content text will go here -->
+    </div>
+    <div class="post-images" id="images">
+      <!-- Images will be dynamically added here -->
+    </div>
+    <div class="post-actions">
+      <button class="act"><i class="fa-regular fa-heart"></i></button>
+      <button class="act"><i class="fa-regular fa-comment"></i></button>
+    </div>
+    <div class="post-footer">
+      <div id="likes">0 likes</div>
+      <div id="comments">0 Comments</div>
+    </div>
+    <div class="comments-list" id="comments-list">
+      <div class="comment">
+        <img class="comment-profile-img" src="../img/dado_profile.webp" alt="User Profile">
+        <div class="comment-content">
+          <span class="comment-username">Username</span>
+          <p class="comment-text">This is a comment text.</p>
+        </div>
+        <button class="delete-comment"></button>
+      </div>
+    </div>
+    <div class="post-comment">
+
+      <input type="text" placeholder="Add a comment..." id="comment-input">
+      <button id="submit-comment"><i class="fa-regular fa-paper-plane"></i></button>
     </div>
 
-    <script src="../postcard/postcard.js"></script>
+
+  </div>
+
+  <script src="../postcard/postcard.js"></script>
 </body>
+
 </html>

@@ -6,9 +6,13 @@ async function loadPostCard() {
 
     //populatePost(postData);
     createPosts(posts);
+    initializeAddPostFeature("add", "post-modal", "close-modal", "post-form");
 
 
 }
+
+
+
 
 const toggleCommentsDisplay = (postElement) => {
     const commentList = postElement.querySelector("#comments-list");
@@ -222,11 +226,7 @@ const createPosts = (postsData) => {
     });
 };
 
-// Initialize posts
 
-
-
-  
 
 document.addEventListener('DOMContentLoaded', loadPostCard);
 /*// Data for the post
