@@ -1,7 +1,7 @@
 
 
   .post {
-    width: 500px;
+    width: 550px;
     background-color: #fff;
     padding-top: 5px;
     padding-bottom: 7px;
@@ -275,7 +275,7 @@
   border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
   align-items: center;
-  width:92%;
+  width:100%;
   border-radius: 10px;
   background-color: white;
 

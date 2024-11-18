@@ -17,6 +17,7 @@ body {
 }
 
 .left {
+    margin-top:10px;
     width: 20%;
     justify-content: center;
 }

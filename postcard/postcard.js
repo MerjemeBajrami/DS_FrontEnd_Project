@@ -4,9 +4,7 @@ async function loadPostCard() {
     const postCardHtml = await response.text();
     postCardPlaceholder.innerHTML = postCardHtml;
 
-    //populatePost(postData);
     createPosts(posts);
-    
 
 }
 

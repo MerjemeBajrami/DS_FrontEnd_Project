@@ -1,0 +1,78 @@
+/* General styling for the connections card */
+.connection-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* To help with button positioning */
+}
+
+.connection-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.connection-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.connection-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.connection-username {
+    font-weight: bold;
+    margin: 0;
+}
+
+.connection-action {
+    color: #555;
+    margin: 5px 0 0 0;
+}
+
+/* Positioning the buttons to the right */
+.connection-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.accept-btn, .decline-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Light blue button for Accept */
+.accept-btn {
+    background-color: #ADD8E6; /* Light blue */
+    color: white;
+}
+
+.accept-btn:hover {
+    background-color: #87CEEB; /* Lighter blue for hover */
+}
+
+/* Pink button for Decline */
+.decline-btn {
+    background-color: #FFB6C1; /* Light pink */
+    color: white;
+}
+
+.decline-btn:hover {
+    background-color: #FF69B4; /* Hot pink for hover */
+}
