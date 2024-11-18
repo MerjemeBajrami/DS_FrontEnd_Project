@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="nav_home/nav_home.css">
 </head>
+
 <body>
-  
+
     <header>
         <div id="nav-placeholder"></div>
     </header>
@@ -16,19 +18,40 @@
     <div class="content">
         <div class="left">
             <div class="profile">
-                <p>Profili</p>
+                <!-- Profile Picture and Name -->
+                <div class="photo">
+                    <div class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="name">Filan Fisteku</h3>
+                        <p class="status">Status</p>
+                    </div>
+                </div>
+                <!-- Bio Section -->
+                <div class="bio">
+                    <p>Bio</p>
+                    <div class="bio-box">
+                        <p>Hello im a nanny and im stupid plus autistic</p>
+                    </div>
+                </div>
+                <!-- Edit Button -->
+                <div class="edit">
+                    <button class="edit-button">Edit</button>
+                </div>
             </div>
+          
             <div class="recent">
                 <p>find out recent activity</p>
             </div>
         </div>
-       
-            <div id="center">
-            
-            </div>
-  
 
-       
+        <div id="center">
+
+        </div>
+
+
+
         <div class="right">
             <div class="recommend">
                 <p>add recommended</p>
@@ -42,8 +65,9 @@
             </div>
         </div>
     </div>
-  
+
     <script src="nav_home/nav_home.js"></script>
     <script src="postcard/postcard.js"></script>
 </body>
+
 </html>
