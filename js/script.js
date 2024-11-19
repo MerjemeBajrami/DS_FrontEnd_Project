@@ -15,3 +15,9 @@ document.querySelector(".profile").style.transition = "opacity 1s";
 setTimeout(() => {
     document.querySelector(".profile").style.opacity = 1;
 }, 500);
+
+// Enhance the "Try Dado on your Mobile" section to show a download modal or redirect
+document.querySelector(".app a").addEventListener("click", (event) => {
+    event.preventDefault();
+    alert("Download the app from your app store!");
+});
