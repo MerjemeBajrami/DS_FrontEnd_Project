@@ -1,13 +1,13 @@
 async function loadNav() {
     try {
         const navPlaceholder = document.getElementById("nav-placeholder");
-        const response = await fetch("nav_home/nav_home.html"); // Ensure this path is correct
+        const response = await fetch("nav_home/nav_home.html"); 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const navHtml = await response.text();
         navPlaceholder.innerHTML = navHtml;
-        // Initialize active link highlighting
+       
         setActiveLink();
         initializeSearchIcon();
     } catch (error) {
@@ -17,10 +17,10 @@ async function loadNav() {
 
     
 }
-// Function to highlight the active link based on the current page
+
 function setActiveLink() {
     const navItems = document.querySelectorAll(".nav-item");
-    const currentPath = window.location.pathname.split("/").pop(); // Get current file name (e.g., 'home.html')
+    const currentPath = window.location.pathname.split("/").pop(); 
     navItems.forEach(link => {
         if (link.getAttribute("href") === currentPath) {
             link.classList.add("active");
@@ -34,16 +34,16 @@ function initializeSearchIcon() {
     const search = document.getElementById("search_icon");
     const input = document.getElementById("search-bar");
 
-    console.log("Search element:", search); // Debugging
-    console.log("Input element:", input);  // Debugging
+    console.log("Search element:", search); 
+    console.log("Input element:", input);  
 
     if (search && input) {
         search.addEventListener("click", function () {
-            // Toggle the width property between 0 and the desired width
+         
             if (input.style.width === "0px" || input.style.width === "") {
-                input.style.width = "100px";  // Set to desired width when visible
+                input.style.width = "200px"; 
             } else {
-                input.style.width = "0px";  // Collapse the input to 0 width
+                input.style.width = "0px";  
             }
         });
     } else {
@@ -55,5 +55,5 @@ function initializeSearchIcon() {
 
 
 
-// Load the navbar after the DOM is ready
+
 document.addEventListener("DOMContentLoaded", loadNav);

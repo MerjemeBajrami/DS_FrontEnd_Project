@@ -85,7 +85,7 @@ nav a {
   text-decoration: none;
   color: #bab1b2;
   font-size: 16px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transitions */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; 
 }
 .nav-item {
   display: inline-block;
@@ -94,7 +94,7 @@ nav a {
 }
 .nav-item:hover {
   color: #e2687e;
-  background-color: #f9e4e7; /* Background change on hover */
+  background-color: #f9e4e7; 
 }
 .nav-item.active {
   color: #e2687e;
@@ -103,14 +103,12 @@ nav a {
 
 #search-bar {
   border: none;
-  width: 0;  /* Initially hidden */
-  display: inline-block;  /* Make sure it can be animated */
+  width: 0;  
+  display: inline-block;  
   outline: none;
-
   border-bottom: 1px solid #e2687e;
- 
-  overflow: hidden;  /* Prevents overflow during transition */
-  transition: width 0.3s ease-out; /* Add smooth transition for width */
+  overflow: hidden;  
+  transition: width 0.3s ease-out; 
 }
 
 #search-bar:focus {
