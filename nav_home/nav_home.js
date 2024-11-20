@@ -9,9 +9,13 @@ async function loadNav() {
         navPlaceholder.innerHTML = navHtml;
         // Initialize active link highlighting
         setActiveLink();
+        initializeSearchIcon();
     } catch (error) {
         console.error("Error loading navbar:", error);
     }
+   
+
+    
 }
 // Function to highlight the active link based on the current page
 function setActiveLink() {
@@ -25,5 +29,31 @@ function setActiveLink() {
         }
     });
 }
+
+function initializeSearchIcon() {
+    const search = document.getElementById("search_icon");
+    const input = document.getElementById("search-bar");
+
+    console.log("Search element:", search); // Debugging
+    console.log("Input element:", input);  // Debugging
+
+    if (search && input) {
+        search.addEventListener("click", function () {
+            // Toggle the width property between 0 and the desired width
+            if (input.style.width === "0px" || input.style.width === "") {
+                input.style.width = "100px";  // Set to desired width when visible
+            } else {
+                input.style.width = "0px";  // Collapse the input to 0 width
+            }
+        });
+    } else {
+        console.error("Required elements are missing.");
+    }
+}
+
+
+
+
+
 // Load the navbar after the DOM is ready
 document.addEventListener("DOMContentLoaded", loadNav);
