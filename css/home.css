@@ -18,7 +18,7 @@ body {
 
 .left {
     margin-top: 10px;
-    width: 20%;
+    width: 25%;
     justify-content: center;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .right {
-    width: 27%;
+    width: 25%;
 }
 
 .recommend, .about, .app {
@@ -77,9 +77,10 @@ body {
     padding: 5px;
     border-radius: 10px;
     max-width: 400px;
-   background-color: white;
+
+    background-color: white;
     margin: 0 auto;
-    height: fit-content;
+    height: 40vh;
     text-align: center;
     font-family: Arial, sans-serif;
 }
@@ -111,7 +112,7 @@ body {
 }
 
 .info {
-    margin-top: 10px;
+    margin-top: 17px;
 }
 
 .name {
@@ -128,6 +129,7 @@ body {
 
 
 .bio p {
+    margin-top: 10px;
     font-size: 1em;
     color: #666;
     margin-bottom: 10px;
@@ -136,14 +138,17 @@ body {
 .bio-box {
     width: 100%;
     height: 100px;
-    background-color: #f9e4e7;
+    /*background-color: #f9e4e7;*/
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); 
-    color: #444;
+ 
+    /*color: #444;*/
     overflow-y: auto; 
     font-size: 0.95em;
     line-height: 1.4;
+}
+.bio-box::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -154,10 +159,10 @@ body {
 .edit-button {
     background-color: #e2687e; 
     border: none;
-    padding: 6px 12px; /* Smaller padding for a more compact button */
+    padding: 6px 12px; 
     color: white;
-    font-size: 0.9em; /* Slightly smaller font size */
-    border-radius: 25px; /* Rounded corners, slightly less rounded for a smaller look */
+    font-size: 0.9em; 
+    border-radius: 25px; 
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s, transform 0.2s;
