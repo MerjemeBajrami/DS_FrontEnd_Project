@@ -28,6 +28,36 @@ nav {
 }
 .right_nav{
   width: 33.333%;
+  position: absolute; 
+  justify-items: end;
+  justify-content: end;
+  top: 10px; 
+  right: 10px;
+}
+.right_nav ul {
+  display: flex; 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+}
+.right_nav li {
+  margin-left: 10px; 
+}
+.right_nav a {
+  text-decoration: none; 
+  color: #bab1b2; 
+  font-size: 16px; 
+  padding: 8px 12px; 
+  border-radius: 30px; 
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.right_nav a:hover {
+  color: #e2687e; 
+  background-color: #f9e4e7; 
+}
+.right_nav a.active {
+  color: #e2687e; 
+  background-color: #f9e4e7; 
 }
 .search-container{
   width: 33.333%;
