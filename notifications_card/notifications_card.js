@@ -1,17 +1,6 @@
-async function loadNotificationCard() {
-    const notificationsCardPlaceholder = document.getElementById("center"); // Ensure this div exists in your HTML
-    const response = await fetch("notifications_card/notifications_card.html");
-    const notificationsCardHtml = await response.text();
-    notificationsCardPlaceholder.innerHTML = notificationsCardHtml;
-
-   
-    createNotifications(notifications);
-}
-
-
 const notifications = [
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=",
         username: "Parent1",
         action: "liked your post",
         time: "5m ago",
@@ -19,7 +8,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=",
         username: "Parent2",
         action: "commented on your post",
         time: "1h ago",
@@ -27,7 +16,7 @@ const notifications = [
         unread: false
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://a.storyblok.com/f/191576/1200x800/a3640fdc4c/profile_picture_maker_before.webp",
         username: "Parent3",
         action: "shared your post",
         time: "2d ago",
@@ -35,7 +24,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&s",
         username: "NannyA",
         action: "liked your post",
         time: "5m ago",
@@ -43,7 +32,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
         username: "Parent4",
         action: "liked your post",
         time: "5m ago",
@@ -51,7 +40,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg",
         username: "NannyB",
         action: "liked your post",
         time: "5m ago",
@@ -59,7 +48,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYXz402I39yGoxw90IrFr9w0vuQnuVSkgPCg&s",
         username: "NannyC",
         action: "liked your post",
         time: "5m ago",
@@ -67,7 +56,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://shotkit.com/wp-content/uploads/2021/06/cool-profile-pic-matheus-ferrero.jpeg",
         username: "Parent5",
         action: "liked your post",
         time: "5m ago",
@@ -75,7 +64,7 @@ const notifications = [
         unread: true
     },
     {
-        profileImg: "https://w7.pngwing.com/pngs/584/113/png-transparent-pink-user-icon.png",
+        profileImg: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
         username: "NannyD",
         action: "liked your post",
         time: "5m ago",
@@ -85,42 +74,57 @@ const notifications = [
     
 ];
 
-
 const populateNotification = (notification, templateNotification) => {
+    // Set the profile image
     const notificationImage = templateNotification.querySelector(".notification-image");
-    notificationImage.src = notification.profileImg;
-    
+    if (notificationImage && notification.profileImg) {
+        notificationImage.src = notification.profileImg;
+    }
+    // Set the username
     const notificationUsername = templateNotification.querySelector(".notification-username");
-    notificationUsername.textContent = notification.username;
-    
+    if (notificationUsername) {
+        notificationUsername.textContent = notification.username;
+    }
+    // Set the action text
     const notificationAction = templateNotification.querySelector(".notification-action");
-    notificationAction.textContent = notification.action;
-    
+    if (notificationAction) {
+        notificationAction.textContent = notification.action;
+    }
+    // Set the time
     const notificationTime = templateNotification.querySelector(".notification-time");
-    notificationTime.textContent = notification.time;
-
-    
+    if (notificationTime) {
+        notificationTime.textContent = notification.time;
+    }
+    // Add the unread class for unread notifications
     if (notification.unread) {
-        templateNotification.classList.add("unread"); 
+        templateNotification.classList.add("unread");
     }
 };
-
 const createNotifications = (notificationsData) => {
     const notificationContainer = document.getElementById("notification-container"); 
     const templateNotification = document.querySelector(".notification-card"); 
-
     if (!notificationContainer || !templateNotification) {
         console.error("Notification container or template not found!");
         return;
     }
-
     notificationsData.forEach((notification) => {
-        const newNotification = templateNotification.cloneNode(true);  // Clone the notification template
-        newNotification.style.display = "block";  // Make the cloned notification visible
-        populateNotification(notification, newNotification);  // Populate with data
-        notificationContainer.appendChild(newNotification);  
+        const newNotification = templateNotification.cloneNode(true); // Clone the notification template
+        newNotification.style.display = "block"; // Make the cloned notification visible
+        populateNotification(notification, newNotification); // Populate with data
+        notificationContainer.appendChild(newNotification); // Append to the container
     });
 };
-
-// Event listener to load notifications after the page is loaded
-document.addEventListener('DOMContentLoaded', loadNotificationCard);
+// Function to load and populate notifications
+async function loadNotificationCard() {
+    const notificationsCardPlaceholder = document.getElementById("center");
+    if (!notificationsCardPlaceholder) {
+        console.error("Placeholder for notifications card not found!");
+        return;
+    }
+    const response = await fetch("notifications_card/notifications_card.html");
+    const notificationsCardHtml = await response.text();
+    notificationsCardPlaceholder.innerHTML = notificationsCardHtml;
+    createNotifications(notifications);
+}
+// Load notifications after DOM content is loaded
+document.addEventListener("DOMContentLoaded", loadNotificationCard);
