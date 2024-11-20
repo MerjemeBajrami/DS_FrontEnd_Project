@@ -25,6 +25,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .right_nav{
   width: 33.333%;
@@ -51,7 +52,7 @@ nav {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .right_nav a:hover {
-  color: #e2687e; 
+  color: rgb(226, 104, 126); 
   background-color: #f9e4e7; 
 }
 .right_nav a.active {

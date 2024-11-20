@@ -58,9 +58,15 @@
 /* Hover and selected styles */
 .accept-icon:hover,
 .accept-icon.selected {
-    background-color: #ff69b4; /* Pinkish color */
+    background-color: #e2687e; /* Pinkish color */
 }
 .decline-icon:hover,
 .decline-icon.selected {
-    background-color: #ff69b4; /* Pinkish color */
+    background-color:#e2687e; /* Pinkish color */
+}
+
+.connection_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
