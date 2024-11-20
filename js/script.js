@@ -22,20 +22,5 @@ document.querySelector(".app a").addEventListener("click", (event) => {
     alert("Download the app from your app store!");
 });
 
-/* 
-Search Functionality
-const notifications = document.querySelectorAll("#center > div");
-const searchInput = document.querySelector("h1 img");
 
-searchInput.addEventListener("click", () => {
-    const searchTerm = prompt("Search notifications:");
-    notifications.forEach((notification) => {
-        if (notification.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
-            notification.style.display = "flex";
-        } else {
-            notification.style.display = "none";
-        }
-    });
-});
-*/
 
