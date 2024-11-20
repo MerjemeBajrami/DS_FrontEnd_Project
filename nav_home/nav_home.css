@@ -18,7 +18,7 @@ nav {
   align-items:center;
   margin: 0 auto;
   background-color: white;
-  border-radius: 50px;
+  
   padding: 10px 20px; 
   position: fixed;
   top: 0px;
@@ -33,13 +33,10 @@ nav {
   width: 33.333%;
   display: flex;
   justify-content: end;
-  align-items: center;
+
+ 
 }
-#search-bar{
-  width: 50%;
-  
-  
-}
+
 .left_nav{
   width: 33.333%;
   display: flex;
@@ -51,6 +48,7 @@ nav {
 }
 .links{
   margin-left: 18%;
+  
 }
 nav a {
   text-decoration: none;
@@ -70,4 +68,31 @@ nav a {
 .nav-item.active {
   color: #e2687e;
   background-color: #f9e4e7;
+}
+
+#search-bar {
+  border: none;
+  width: 0;  /* Initially hidden */
+  display: inline-block;  /* Make sure it can be animated */
+  outline: none;
+
+  border-bottom: 1px solid #e2687e;
+ 
+  overflow: hidden;  /* Prevents overflow during transition */
+  transition: width 0.3s ease-out; /* Add smooth transition for width */
+}
+
+#search-bar:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e2687e;
+}
+
+.fa-magnifying-glass {
+  font-size: 23px;
+  color: #e2687e;
+}
+
+.fa-magnifying-glass:hover {
+  transform: scale(1.1);
 }
