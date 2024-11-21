@@ -1,111 +1,130 @@
-const connections = [
+const notifications = [
     {
         profileImg: "https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=",
-        username: "NannyA",
-        action: "sent you a connect",
-        unread: true,
-    },
-    {
-        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&s",
-        username: "NannyB",
-        action: "sent you a connect",
-        unread: false,
+        username: "Parent1",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
         profileImg: "https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?s=612x612&w=0&k=20&c=8ssXDNTp1XAPan8Bg6mJRwG7EXHshFO5o0v9SIj96nY=",
-        username: "Parent 1",
-        action: "sent you a connect",
-        unread: true,
+        username: "Parent2",
+        action: "commented on your post",
+        time: "1h ago",
+        preview: "Thank you for the tips!",
+        unread: false
     },
     {
         profileImg: "https://a.storyblok.com/f/191576/1200x800/a3640fdc4c/profile_picture_maker_before.webp",
-        username: "NannyC",
-        action: "sent you a connect",
-        unread: false,
+        username: "Parent3",
+        action: "shared your post",
+        time: "2d ago",
+        preview: "Useful information for everyone!",
+        unread: true
     },
     {
         profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&s",
-        username: "Parent 2",
-        action: "sent you a connect",
-        unread: true,
+        username: "NannyA",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
         profileImg: "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png",
-        username: "NannyD",
-        action: "sent you a connect",
-        unread: false,
+        username: "Parent4",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
         profileImg: "https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg",
-        username: "Parent 3",
-        action: "sent you a connect",
-        unread: true,
+        username: "NannyB",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
-        profileImg:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYXz402I39yGoxw90IrFr9w0vuQnuVSkgPCg&s",
-        username: "Parent 4",
-        action: "sent you a connect",
-        unread: true,
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYXz402I39yGoxw90IrFr9w0vuQnuVSkgPCg&s",
+        username: "NannyC",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
         profileImg: "https://shotkit.com/wp-content/uploads/2021/06/cool-profile-pic-matheus-ferrero.jpeg",
-        username: "Parent 5",
-        action: "sent you a connect",
-        unread: true,
+        username: "Parent5",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
     },
     {
         profileImg: "https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg",
-        username: "Parent 6",
-        action: "sent you a connect",
-        unread: true,
-    }
+        username: "NannyD",
+        action: "liked your post",
+        time: "5m ago",
+        preview: "Great post about child safety!",
+        unread: true
+    },
+    
 ];
-// Function to load and display connection cards
-async function loadConnectionCards() {
-    const connectionsContainer = document.getElementById("center"); // Ensure this is your connections page container
-    const response = await fetch("connections_card/connections_card.html");
-    const connectionsCardHtml = await response.text();
-    connectionsContainer.innerHTML = connectionsCardHtml;
-    // Create connection cards dynamically
-    createConnections(connections);
-}
-const populateConnectionCard = (connection, templateCard) => {
-    const connectionImage = templateCard.querySelector(".connection-image");
-    connectionImage.src = connection.profileImg;
-    const connectionUsername = templateCard.querySelector(".connection-username");
-    connectionUsername.textContent = connection.username;
-    const connectionAction = templateCard.querySelector(".connection-action");
-    connectionAction.textContent = connection.action;
-    // Optionally, if the connection is unread, apply a style
-    if (connection.unread) {
-        templateCard.classList.add("unread");
+
+const populateNotification = (notification, templateNotification) => {
+    // Set the profile image
+    const notificationImage = templateNotification.querySelector(".notification-image");
+    if (notificationImage && notification.profileImg) {
+        notificationImage.src = notification.profileImg;
     }
-    // Add functionality to icons (Accept and Decline)
-    const acceptIcon = templateCard.querySelector(".accept-icon");
-    const declineIcon = templateCard.querySelector(".decline-icon");
-    acceptIcon.addEventListener("click", () => {
-        console.log(`Connection request from ${connection.username} accepted`);
-        templateCard.style.display = "none"; // Remove the connection card
-    });
-    declineIcon.addEventListener("click", () => {
-        console.log(`Connection request from ${connection.username} declined`);
-        templateCard.style.display = "none"; // Remove the connection card
-    });
+    // Set the username
+    const notificationUsername = templateNotification.querySelector(".notification-username");
+    if (notificationUsername) {
+        notificationUsername.textContent = notification.username;
+    }
+    // Set the action text
+    const notificationAction = templateNotification.querySelector(".notification-action");
+    if (notificationAction) {
+        notificationAction.textContent = notification.action;
+    }
+    // Set the time
+    const notificationTime = templateNotification.querySelector(".notification-time");
+    if (notificationTime) {
+        notificationTime.textContent = notification.time;
+    }
+    // Add the unread class for unread notifications
+    if (notification.unread) {
+        templateNotification.classList.add("unread");
+    }
 };
-// Function to create the connection cards
-const createConnections = (connectionsData) => {
-    const connectionsContainer = document.getElementById("center"); // Container where connections will be displayed
-    const templateCard = document.querySelector(".connection-card"); // The hidden template
-    if (!connectionsContainer || !templateCard) {
-        console.error("Connection container or template card not found!");
+const createNotifications = (notificationsData) => {
+    const notificationContainer = document.getElementById("notification-container"); 
+    const templateNotification = document.querySelector(".notification-card"); 
+    if (!notificationContainer || !templateNotification) {
+        console.error("Notification container or template not found!");
         return;
     }
-    connectionsData.forEach((connection) => {
-        const newConnection = templateCard.cloneNode(true);  // Clone the template
-        newConnection.style.display = "block";  // Make it visible
-        populateConnectionCard(connection, newConnection);  // Populate with data
-        connectionsContainer.appendChild(newConnection);  // Append to the container
+    notificationsData.forEach((notification) => {
+        const newNotification = templateNotification.cloneNode(true); // Clone the notification template
+        newNotification.style.display = "block"; // Make the cloned notification visible
+        populateNotification(notification, newNotification); // Populate with data
+        notificationContainer.appendChild(newNotification); // Append to the container
     });
 };
-// Event listener to load the connection cards when the page is ready
-document.addEventListener('DOMContentLoaded', loadConnectionCards);
+// Function to load and populate notifications
+async function loadNotificationCard() {
+    const notificationsCardPlaceholder = document.getElementById("center");
+    if (!notificationsCardPlaceholder) {
+        console.error("Placeholder for notifications card not found!");
+        return;
+    }
+    const response = await fetch("notifications_card/notifications_card.html");
+    const notificationsCardHtml = await response.text();
+    notificationsCardPlaceholder.innerHTML = notificationsCardHtml;
+    createNotifications(notifications);
+}
+// Load notifications after DOM content is loaded
+document.addEventListener("DOMContentLoaded", loadNotificationCard);
