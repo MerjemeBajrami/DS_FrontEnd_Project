@@ -125,3 +125,51 @@ nav a {
 .fa-magnifying-glass:hover {
   transform: scale(1.1);
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#settings-icon {
+  font-size: 20px;
+  color: #bab1b2;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+#settings-icon:hover {
+  color: #e2687e;
+  background-color: #f9e4e7;
+  transform: rotate(90deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 5px;
+  min-width: 150px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #bab1b2;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 0px;
+}
+
+.dropdown-content a:hover {
+  color: #e2687e;
+  background-color: #f9e4e7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

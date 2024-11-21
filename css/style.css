@@ -436,7 +436,6 @@ footer .columns {
   justify-content: space-between;
   gap: 2%;
   align-items: center;
-  justify-content: space-evenly;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -448,7 +447,9 @@ footer .columns {
   text-align: left;
   line-height: 1.8rem;
   /*align-items: center;*/
-  text-align: center
+  text-align: center;
+  justify-content: center;
+  
 }
 
 footer ul {

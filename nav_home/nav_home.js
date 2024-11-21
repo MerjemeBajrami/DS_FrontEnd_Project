@@ -51,6 +51,20 @@ function initializeSearchIcon() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const settingsIcon = document.getElementById("settings-icon");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    document.addEventListener("click", (event) => {
+        if (settingsIcon.contains(event.target)) {
+            dropdownContent.style.display =
+                dropdownContent.style.display === "block" ? "none" : "block";
+        } else if (!dropdownContent.contains(event.target)) {
+            dropdownContent.style.display = "none";
+        }
+    });
+});
+
 
 
 
