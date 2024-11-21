@@ -122,21 +122,21 @@
     border: none;
     background: none;
     cursor: pointer;
-    padding: 5px; /* Expands clickable area */
+    padding: 5px; 
     transition: color 0.3s;
   }
   
   .post-actions .act:hover {
-    color: #e2687e; /* Changes the color of the button */
+    color: #e2687e; 
   }
   
   .post-actions .act i {
     font-size: 20px;
-    color: #333; /* Default color of the icon */
+    color: #333;
   }
   
   .post-actions .act:hover i {
-    color: #e2687e; /* Changes icon color when hovering over the button */
+    color: #e2687e; 
   }
   
   
@@ -191,12 +191,11 @@
 
   }
 
-  /* Styling for the comment section */
 .comments-list {
   margin-top: 15px;
 }
 
-/* Individual comment styling */
+
 .comment {
   display: flex;
   align-items: flex-start;
@@ -205,7 +204,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-/* Profile image */
+
 .comment-profile-img {
   width: 40px;
   height: 40px;
@@ -213,25 +212,24 @@
   margin-right: 10px;
 }
 
-/* Content container (username and text) */
 .comment-content {
   flex-grow: 1;
 }
 
-/* Username styling */
+
 .comment-username {
   font-weight: bold;
   color: #333;
 }
 
-/* Comment text styling */
+
 .comment-text {
   margin-top: 5px;
   color: #555;
   font-size: 14px;
 }
 
-/* Delete button styling */
+
 .delete-comment {
   background: none;
   border: none;
@@ -242,20 +240,20 @@
   align-self: center;
 }
 
-/* Change color of delete button on hover */
+
 .delete-comment:hover {
   color: #e2687e;
 }
 
-/* Initially hide the comments section */
+
 .comments-list.hidden {
   display: none;
 }
 
-/* Styling for the comment section */
+
 .comments-list {
   margin-top: 15px;
-  display: block; /* Show it once a comment is added */
+  display: block;
   border-top: 1px solid #ddd;
 }
 
@@ -292,18 +290,18 @@
   color: #e2687e;
 
 }
-/* Modal styles */
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure it appears above other content */
+  z-index: 9999; 
 }
 
 .modal-content {

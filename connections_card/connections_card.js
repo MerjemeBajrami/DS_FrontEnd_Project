@@ -60,13 +60,13 @@ const connections = [
         unread: true,
     }
 ];
-// Function to load and display connection cards
+
 async function loadConnectionCards() {
-    const connectionsContainer = document.getElementById("center"); // Ensure this is your connections page container
+    const connectionsContainer = document.getElementById("center"); 
     const response = await fetch("connections_card/connections_card.html");
     const connectionsCardHtml = await response.text();
     connectionsContainer.innerHTML = connectionsCardHtml;
-    // Create connection cards dynamically
+   
     createConnections(connections);
 }
 const populateConnectionCard = (connection, templateCard) => {
@@ -76,36 +76,36 @@ const populateConnectionCard = (connection, templateCard) => {
     connectionUsername.textContent = connection.username;
     const connectionAction = templateCard.querySelector(".connection-action");
     connectionAction.textContent = connection.action;
-    // Optionally, if the connection is unread, apply a style
+  
     if (connection.unread) {
         templateCard.classList.add("unread");
     }
-    // Add functionality to icons (Accept and Decline)
+
     const acceptIcon = templateCard.querySelector(".accept-icon");
     const declineIcon = templateCard.querySelector(".decline-icon");
     acceptIcon.addEventListener("click", () => {
         console.log(`Connection request from ${connection.username} accepted`);
-        templateCard.style.display = "none"; // Remove the connection card
+        templateCard.style.display = "none"; 
     });
     declineIcon.addEventListener("click", () => {
         console.log(`Connection request from ${connection.username} declined`);
-        templateCard.style.display = "none"; // Remove the connection card
+        templateCard.style.display = "none"; 
     });
 };
-// Function to create the connection cards
+
 const createConnections = (connectionsData) => {
-    const connectionsContainer = document.getElementById("center"); // Container where connections will be displayed
-    const templateCard = document.querySelector(".connection-card"); // The hidden template
+    const connectionsContainer = document.getElementById("center"); 
+    const templateCard = document.querySelector(".connection-card"); 
     if (!connectionsContainer || !templateCard) {
         console.error("Connection container or template card not found!");
         return;
     }
     connectionsData.forEach((connection) => {
-        const newConnection = templateCard.cloneNode(true);  // Clone the template
-        newConnection.style.display = "block";  // Make it visible
-        populateConnectionCard(connection, newConnection);  // Populate with data
-        connectionsContainer.appendChild(newConnection);  // Append to the container
+        const newConnection = templateCard.cloneNode(true);  
+        newConnection.style.display = "block"; 
+        populateConnectionCard(connection, newConnection);  
+        connectionsContainer.appendChild(newConnection); 
     });
 };
-// Event listener to load the connection cards when the page is ready
+
 document.addEventListener('DOMContentLoaded', loadConnectionCards);

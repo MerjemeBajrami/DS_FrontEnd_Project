@@ -75,27 +75,27 @@ const notifications = [
 ];
 
 const populateNotification = (notification, templateNotification) => {
-    // Set the profile image
+ 
     const notificationImage = templateNotification.querySelector(".notification-image");
     if (notificationImage && notification.profileImg) {
         notificationImage.src = notification.profileImg;
     }
-    // Set the username
+    
     const notificationUsername = templateNotification.querySelector(".notification-username");
     if (notificationUsername) {
         notificationUsername.textContent = notification.username;
     }
-    // Set the action text
+   
     const notificationAction = templateNotification.querySelector(".notification-action");
     if (notificationAction) {
         notificationAction.textContent = notification.action;
     }
-    // Set the time
+  
     const notificationTime = templateNotification.querySelector(".notification-time");
     if (notificationTime) {
         notificationTime.textContent = notification.time;
     }
-    // Add the unread class for unread notifications
+
     if (notification.unread) {
         templateNotification.classList.add("unread");
     }
@@ -108,13 +108,13 @@ const createNotifications = (notificationsData) => {
         return;
     }
     notificationsData.forEach((notification) => {
-        const newNotification = templateNotification.cloneNode(true); // Clone the notification template
-        newNotification.style.display = "block"; // Make the cloned notification visible
-        populateNotification(notification, newNotification); // Populate with data
-        notificationContainer.appendChild(newNotification); // Append to the container
+        const newNotification = templateNotification.cloneNode(true); 
+        newNotification.style.display = "block"; 
+        populateNotification(notification, newNotification); 
+        notificationContainer.appendChild(newNotification); 
     });
 };
-// Function to load and populate notifications
+
 async function loadNotificationCard() {
     const notificationsCardPlaceholder = document.getElementById("center");
     if (!notificationsCardPlaceholder) {
@@ -126,5 +126,5 @@ async function loadNotificationCard() {
     notificationsCardPlaceholder.innerHTML = notificationsCardHtml;
     createNotifications(notifications);
 }
-// Load notifications after DOM content is loaded
+
 document.addEventListener("DOMContentLoaded", loadNotificationCard);

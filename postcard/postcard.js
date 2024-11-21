@@ -17,11 +17,11 @@ const toggleCommentsDisplay = (postElement) => {
     const comments = Array.from(commentList.children);
 
     if (commentsToggleButton.textContent === "Show all comments") {
-        // Show all comments
+        
         comments.forEach((comment) => (comment.style.display = "flex"));
         commentsToggleButton.textContent = "Show less";
     } else {
-        // Show only the first two comments
+        
         comments.forEach((comment, index) => {
             comment.style.display = index < 2 ? "flex" : "none";
         });
@@ -36,18 +36,18 @@ const handleComment = (post, postElement) => {
     const commentInput = postElement.querySelector("#comment-input");
     const commentList = postElement.querySelector("#comments-list");
     const commentsCount = postElement.querySelector("#comments");
-    const commentsSection = postElement.querySelector(".comments-list"); // Get the comments section
+    const commentsSection = postElement.querySelector(".comments-list"); 
 
     const newComment = commentInput.value.trim();
 
     if (newComment) {
-        // Create a new comment element
+       
         const commentElement = document.createElement("div");
         commentElement.classList.add("comment");
 
         const commentProfileImg = document.createElement("img");
         commentProfileImg.classList.add("comment-profile-img");
-        commentProfileImg.src = "../img/profile.jpg"; // Replace with actual profile image path
+        commentProfileImg.src = "../img/profile.jpg"; 
         commentProfileImg.alt = "User Profile";
         
         const commentContent = document.createElement("div");
@@ -88,7 +88,7 @@ const handleComment = (post, postElement) => {
             commentsSection.classList.remove("hidden");
         }
 
-        // Reapply visibility rules
+        
         toggleCommentsDisplay(postElement);
     }
 };
@@ -105,7 +105,7 @@ const initializeComments = (postElement) => {
         toggleCommentsDisplay(postElement);
     });
 
-    // Show only the first two comments by default
+
     const comments = Array.from(commentList.children);
     comments.forEach((comment, index) => {
         comment.style.display = index < 2 ? "flex" : "none";
@@ -139,37 +139,37 @@ const posts = [
 ];
 
 
-// Function to handle the like/unlike toggle
+
 const toggleLike = (post, likesElement, heartIcon) => {
-    post.isLiked = !post.isLiked; // Toggle the like status
+    post.isLiked = !post.isLiked; 
     if (post.isLiked) {
-        post.likes += 1; // Increment likes
-        heartIcon.classList.add("fa-solid"); // Change to solid heart
+        post.likes += 1; 
+        heartIcon.classList.add("fa-solid"); 
         heartIcon.classList.remove("fa-regular");
         heartIcon.style.color = "#e2687e";
 
-         // Add hover effect for the liked state
+     
          heartIcon.addEventListener("mouseenter", () => {
             heartIcon.style.color = "#e2687e"; 
         });
         heartIcon.addEventListener("mouseleave", () => {
-            heartIcon.style.color = "#e2687e"; // Reset to liked green
+            heartIcon.style.color = "#e2687e"; 
         });
     } else {
-        post.likes -= 1; // Decrement likes
-        heartIcon.classList.add("fa-regular"); // Change back to regular heart
+        post.likes -= 1; 
+        heartIcon.classList.add("fa-regular"); 
         heartIcon.classList.remove("fa-solid");
         heartIcon.style.color = "black"; 
 
-          // Add hover effect for the unliked state
+          
           heartIcon.addEventListener("mouseenter", () => {
-            heartIcon.style.color = "#e2687e"; // 
+            heartIcon.style.color = "#e2687e"; 
         });
         heartIcon.addEventListener("mouseleave", () => {
-            heartIcon.style.color = "black"; // Reset to unliked gray
+            heartIcon.style.color = "black"; 
         });
     }
-    likesElement.textContent = `${post.likes} likes`; // Update the likes text
+    likesElement.textContent = `${post.likes} likes`; 
 };
 const populatePost = (post, templatePost) => {
     templatePost.querySelector("#profile-img").src = post.profileImg;
@@ -199,27 +199,27 @@ const populatePost = (post, templatePost) => {
         handleComment(post, templatePost);
     });
 
-    // Initialize comments visibility and toggle button
+    
     initializeComments(templatePost);
 };
 
 
-// Function to dynamically create posts and append them to the container
+
 const createPosts = (postsData) => {
     const postContainer = document.getElementById("post-container");
     const templatePost = document.querySelector(".post");
 
-    // Check if post container and template exist
+    
     if (!postContainer || !templatePost) {
         console.error("Post container or template not found!");
         return;
     }
 
     postsData.forEach((post) => {
-        const newPost = templatePost.cloneNode(true); // Clone the hidden template
-        newPost.style.display = "block"; // Make the cloned post visible
-        populatePost(post, newPost); // Populate the cloned post with data
-        postContainer.appendChild(newPost); // Append the populated post to the container
+        const newPost = templatePost.cloneNode(true); 
+        newPost.style.display = "block"; 
+        populatePost(post, newPost); 
+        postContainer.appendChild(newPost); 
     });
 };
 

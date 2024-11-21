@@ -1,4 +1,4 @@
-/* General styling for the connections card */
+
 .connection-card {
     display: flex;
     justify-content: space-between; 
@@ -34,12 +34,12 @@
     color: #555;
     margin: 5px 0 0 0;
 }
-/* Positioning icons on the right */
+
 .connection-buttons {
     display: flex;
-    gap: 15px; /* Space between the icons */
+    gap: 15px; 
 }
-/* Default icon styles */
+
 .accept-icon,
 .decline-icon {
     display: inline-block;
@@ -51,18 +51,18 @@
     line-height: 1;
     width: 40px;
     height: 40px;
-    background-color: #ddd; /* Default gray color */
-    color: #fff; /* Icon color */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    background-color: #ddd; 
+    color: #fff; 
+    transition: background-color 0.3s ease; 
 }
-/* Hover and selected styles */
+
 .accept-icon:hover,
 .accept-icon.selected {
-    background-color: #e2687e; /* Pinkish color */
+    background-color: #e2687e; 
 }
 .decline-icon:hover,
 .decline-icon.selected {
-    background-color:#e2687e; /* Pinkish color */
+    background-color:#e2687e; 
 }
 
 .connection_wrapper{

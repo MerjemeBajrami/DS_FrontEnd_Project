@@ -23,20 +23,20 @@ $(document).ready(function() {
 async function loadCard() {
     const signPlaceholder = document.getElementById("sign_up");
     
-    // Fetch and insert the HTML for signin
+
     const response = await fetch("signin/signin.html");
     const signHtml = await response.text();
     signPlaceholder.innerHTML = signHtml;
 
-    // Load signin.css dynamically
+
     const signCssLink = document.createElement('link');
     signCssLink.rel = 'stylesheet';
-    signCssLink.href = 'signin/signin.css'; // Adjust path if needed
+    signCssLink.href = 'signin/signin.css'; 
     document.head.appendChild(signCssLink);
 
-    // Load signin.js dynamically
+
     const signInScript = document.createElement('script');
-    signInScript.src = 'signin/signin.js'; // Adjust path if needed
+    signInScript.src = 'signin/signin.js'; 
     document.body.appendChild(signInScript);
 }
 

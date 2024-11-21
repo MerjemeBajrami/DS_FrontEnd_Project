@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Data for the dynamic content
+ 
     const content = {
         story: `
         <p>Hi, my name is <span contenteditable="false" id="user-name">[Your Name]</span>, and caring for children has always been a part of my life.</p>
@@ -45,12 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
         experience: "Experience"
     };
 
-    // Select elements for content switching
+
     const links = document.querySelectorAll(".summary ul li a");
     const contentDiv = document.getElementById("content");
     const title = document.getElementById("title");
 
-    // Handle dynamic content switching
+
     links.forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -60,52 +60,46 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Editable profile toggle functionality
+
     const editButton = document.getElementById('edit_profile');
     const elementsToEdit = document.querySelectorAll('[contenteditable="false"]');
 
-    // This will allow toggling the 'contenteditable' attribute
+ 
     editButton.addEventListener("click", () => {
-        // If it's in "Edit" mode, allow editing
+
         if (editButton.textContent === "Edit") {
             elementsToEdit.forEach(element => {
-                // Toggle contenteditable to true
+               
                 element.contentEditable = "true";
             });
             editButton.textContent = "Save";
         } else {
-            // If it's in "Save" mode, save the changes
+     
             updateProfile();
             elementsToEdit.forEach(element => {
-                // Set contenteditable to false to make it non-editable
+          
                 element.contentEditable = "false";
             });
             editButton.textContent = "Edit";
         }
     });
 
-    // Function to update profile information dynamically
+   
     function updateProfile() {
         const userNameElement = document.getElementById('user-name');
         const contentElement = document.getElementById('content');
 
-        // Check if elements exist before accessing them
+
         if (userNameElement && contentElement) {
-            // Grab the editable data
+
             const userName = userNameElement.textContent;
             const storyText = contentElement.textContent;
 
-            // Update the content on the page based on changes
+         
             document.getElementById('user-name').textContent = userName;
-            content.story = storyText;  // Example of saving changes to 'story'
+            content.story = storyText;  
 
-            // Optional: Save data to localStorage or backend if needed
-            // localStorage.setItem('userProfile', JSON.stringify({
-            //     userName,
-            //     storyText
-            // }));
-
-            // Notify user that the changes have been saved
+           
             alert('Profile changes have been saved!');
         } else {
             console.error("Elements not found!");

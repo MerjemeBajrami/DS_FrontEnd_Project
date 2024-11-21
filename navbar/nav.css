@@ -25,12 +25,12 @@ nav {
   border-radius: 50px;
 
   
-  /* Make it sticky */
+
   position: fixed;
-  top: 10px; /* Adjusts distance from the top of the window */
+  top: 10px; 
   left: 0;
   right: 0;
-  z-index: 1000; /* Keeps the nav on top of other elements */
+  z-index: 1000; 
   
     
     
@@ -104,13 +104,13 @@ nav ul li a:before {
     border-radius: 30px;
     
 }
-/* Dropdown container */
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown button style */
+
 .dropdown-toggle {
   background-color: #f6f6f6;
   color: #e2687e;
@@ -126,9 +126,9 @@ nav ul li a:before {
   height: 50px;
 }
 
-/* Dropdown menu (hidden by default) */
+
 .dropdown-menu {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -141,12 +141,12 @@ nav ul li a:before {
 }
 
 
-/* Show the dropdown menu when parent is hovered */
+
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Dropdown item styles */
+
 .dropdown-item {
   padding: 10px;
   font-size: 14px;
@@ -155,7 +155,7 @@ nav ul li a:before {
   transition: background-color 0.3s;
 }
 
-/* Hover effect for items */
+
 .dropdown-item:hover {
   background-color: #f9e4e7;
   color: #674d51;
