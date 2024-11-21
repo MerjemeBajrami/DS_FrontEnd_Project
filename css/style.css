@@ -37,12 +37,19 @@ main img {
 }
 
 .main_text {
-  width: 37%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+  
+
 }
 
 .main_p {
   color: #5a3f42;
   font-size: 50px;
+  font-weight: bold;
 }
 
 .top {
@@ -485,4 +492,40 @@ footer ul li a:hover {
   margin: 0;
   opacity: 0.9;
   font-size: 12px;
+}
+#search_place_welcome {
+  border: none;
+  width: 200px;  
+
+  display: inline-block;  
+  outline: none;
+  background-color: #e2687e;
+  color: white;
+  
+  overflow: hidden;  
+  transition: width 0.3s ease-out; 
+}
+#search_place_welcome::placeholder{
+  color: white;
+}
+
+#search_place_welcome:focus {
+  border: none;
+  outline: none;
+  
+}
+
+.search_welcome{
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  gap: 20px;
+  background-color: #e2687e;
+  border-radius: 20px;
+  padding: 10px;
+
+}
+.search_welcome i{
+  color: white;
+ 
 }

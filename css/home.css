@@ -66,6 +66,10 @@ body {
     color: #7b7979;
     font-size: 12px;
 }
+
+.app a:hover{
+    color: #e2687e;
+}
 #center::-webkit-scrollbar {
     display: none;
 }

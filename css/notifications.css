@@ -338,3 +338,7 @@ body {
      border-color: white;
      color: #e2687e;
    }
+
+   .app a:hover{
+    color: #e2687e;
+}
