@@ -62,7 +62,8 @@ nav {
 .search-container{
   width: 33.333%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+
 
 
  
@@ -172,4 +173,52 @@ nav a {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+#suggestion-list {
+  list-style: none;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  position: absolute; /* Position it directly below the search input */
+  top: 100%; /* Align it below the search bar */
+
+
+  max-height: 200px; /* Limit the height */
+  overflow-y: auto; /* Scrollable if suggestions exceed the max height */
+  background-color: #fff; /* Background for the suggestion list */
+  border: 1px solid #e2687e; /* Border around the suggestion list */
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+  display: none; /* Hidden by default, shown when typing */
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5; /* Highlight suggestion on hover */
+}
+
+.suggestion-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.suggestion-item .info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.suggestion-item .info p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #777;
 }
