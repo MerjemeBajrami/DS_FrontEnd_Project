@@ -71,26 +71,26 @@ const notifications = [
         preview: "Great post about child safety!",
         unread: true
     },
-    
+
 ];
 
 const populateNotification = (notification, templateNotification) => {
- 
+
     const notificationImage = templateNotification.querySelector(".notification-image");
     if (notificationImage && notification.profileImg) {
         notificationImage.src = notification.profileImg;
     }
-    
+
     const notificationUsername = templateNotification.querySelector(".notification-username");
     if (notificationUsername) {
         notificationUsername.textContent = notification.username;
     }
-   
+
     const notificationAction = templateNotification.querySelector(".notification-action");
     if (notificationAction) {
         notificationAction.textContent = notification.action;
     }
-  
+
     const notificationTime = templateNotification.querySelector(".notification-time");
     if (notificationTime) {
         notificationTime.textContent = notification.time;
@@ -101,17 +101,17 @@ const populateNotification = (notification, templateNotification) => {
     }
 };
 const createNotifications = (notificationsData) => {
-    const notificationContainer = document.getElementById("notification-container"); 
-    const templateNotification = document.querySelector(".notification-card"); 
+    const notificationContainer = document.getElementById("notification-container");
+    const templateNotification = document.querySelector(".notification-card");
     if (!notificationContainer || !templateNotification) {
         console.error("Notification container or template not found!");
         return;
     }
     notificationsData.forEach((notification) => {
-        const newNotification = templateNotification.cloneNode(true); 
-        newNotification.style.display = "block"; 
-        populateNotification(notification, newNotification); 
-        notificationContainer.appendChild(newNotification); 
+        const newNotification = templateNotification.cloneNode(true);
+        newNotification.style.display = "block";
+        populateNotification(notification, newNotification);
+        notificationContainer.appendChild(newNotification);
     });
 };
 
