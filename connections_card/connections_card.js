@@ -42,7 +42,7 @@ const connections = [
         unread: true,
     },
     {
-        profileImg:  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYXz402I39yGoxw90IrFr9w0vuQnuVSkgPCg&s",
+        profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYXz402I39yGoxw90IrFr9w0vuQnuVSkgPCg&s",
         username: "Parent 4",
         action: "sent you a connect",
         unread: true,
@@ -62,11 +62,11 @@ const connections = [
 ];
 
 async function loadConnectionCards() {
-    const connectionsContainer = document.getElementById("center"); 
+    const connectionsContainer = document.getElementById("center");
     const response = await fetch("connections_card/connections_card.html");
     const connectionsCardHtml = await response.text();
     connectionsContainer.innerHTML = connectionsCardHtml;
-   
+
     createConnections(connections);
 }
 const populateConnectionCard = (connection, templateCard) => {
@@ -76,7 +76,7 @@ const populateConnectionCard = (connection, templateCard) => {
     connectionUsername.textContent = connection.username;
     const connectionAction = templateCard.querySelector(".connection-action");
     connectionAction.textContent = connection.action;
-  
+
     if (connection.unread) {
         templateCard.classList.add("unread");
     }
@@ -85,26 +85,26 @@ const populateConnectionCard = (connection, templateCard) => {
     const declineIcon = templateCard.querySelector(".decline-icon");
     acceptIcon.addEventListener("click", () => {
         console.log(`Connection request from ${connection.username} accepted`);
-        templateCard.style.display = "none"; 
+        templateCard.style.display = "none";
     });
     declineIcon.addEventListener("click", () => {
         console.log(`Connection request from ${connection.username} declined`);
-        templateCard.style.display = "none"; 
+        templateCard.style.display = "none";
     });
 };
 
 const createConnections = (connectionsData) => {
-    const connectionsContainer = document.getElementById("center"); 
-    const templateCard = document.querySelector(".connection-card"); 
+    const connectionsContainer = document.getElementById("center");
+    const templateCard = document.querySelector(".connection-card");
     if (!connectionsContainer || !templateCard) {
         console.error("Connection container or template card not found!");
         return;
     }
     connectionsData.forEach((connection) => {
-        const newConnection = templateCard.cloneNode(true);  
-        newConnection.style.display = "block"; 
-        populateConnectionCard(connection, newConnection);  
-        connectionsContainer.appendChild(newConnection); 
+        const newConnection = templateCard.cloneNode(true);
+        newConnection.style.display = "block";
+        populateConnectionCard(connection, newConnection);
+        connectionsContainer.appendChild(newConnection);
     });
 };
 
