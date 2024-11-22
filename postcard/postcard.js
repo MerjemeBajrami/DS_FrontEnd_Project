@@ -5,6 +5,8 @@ async function loadPostCard() {
     postCardPlaceholder.innerHTML = postCardHtml;
 
     createPosts(posts);
+    initializeModal();
+    initializePostForm();
 
 }
 
@@ -222,6 +224,135 @@ const createPosts = (postsData) => {
         postContainer.appendChild(newPost); 
     });
 };
+
+function toggleModalVisibility(show) {
+    const modal = document.getElementById("post-modal");
+    if (show) {
+        modal.style.display = "block"; // Show the modal
+    } else {
+        modal.style.display = "none"; // Hide the modal
+    }
+}
+
+function initializeModal() {
+    const addButton = document.getElementById("add");
+    const closeButton = document.getElementById("close-modal");
+
+    // Show the modal when the Add button is clicked
+    addButton.addEventListener("click", () => {
+        toggleModalVisibility(true);
+    });
+
+    // Hide the modal when the Close button is clicked
+    closeButton.addEventListener("click", () => {
+        toggleModalVisibility(false);
+    });
+
+    // Optional: Close the modal if the user clicks outside the modal content
+    const modal = document.getElementById("post-modal");
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            toggleModalVisibility(false);
+        }
+    });
+}
+
+function initializePostForm() {
+    // Select necessary elements
+    const postForm = document.getElementById('post-form');
+    const postImagesInput = document.getElementById('post-images');
+    const imagePreview = document.getElementById('image-preview');
+    const postContainer = document.getElementById("post-container");
+    const templatePost = document.querySelector(".post");
+
+    if (!postContainer || !templatePost) {
+        console.error("Post container or template not found!");
+        return;
+    }
+
+    // Function to handle file selection and display previews
+    const handleFileSelection = (event) => {
+        const files = event.target.files;
+        imagePreview.innerHTML = ''; // Clear previous previews
+
+        Array.from(files).forEach((file) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result; // Display the image preview
+                imagePreview.appendChild(img);
+            };
+            reader.readAsDataURL(file); // Read the file as a data URL
+        });
+    };
+
+    // Function to handle form submission
+    const handleFormSubmission = (event) => {
+        event.preventDefault();
+        const postContent = document.getElementById('post-content').value.trim();
+        const files = postImagesInput.files;
+
+        if (!postContent && files.length === 0) {
+            alert('Post content or at least one image is required.');
+            return;
+        }
+
+        // Collect image sources for display
+        const images = [];
+        Array.from(files).forEach((file) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                images.push(e.target.result);
+
+                // Once all images are processed, create and add the new post
+                if (images.length === files.length) {
+                    addNewPost(postContent, images);
+                }
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // If there are no images, create the post immediately
+        if (files.length === 0) {
+            addNewPost(postContent, []);
+        }
+    };
+
+    // Function to create a new post
+    const addNewPost = (content, images) => {
+        const newPost = {
+            profileImg: "../img/profile.jpg", // Placeholder for the user's profile image
+            username: "CurrentUser", // Replace with the actual logged-in user's username
+            location: "Just now · Your Location", // Placeholder for location
+            content,
+            images,
+            likes: 0,
+            comments: 0,
+            isLiked: false,
+        };
+
+        // Add to posts array
+        posts.unshift(newPost);
+
+        // Create the new post element and add it to the DOM
+        const newPostElement = templatePost.cloneNode(true);
+        newPostElement.style.display = "block"; // Make it visible
+        populatePost(newPost, newPostElement);
+        postContainer.prepend(newPostElement); // Add it at the top
+
+        // Clear form and preview
+        postForm.reset();
+        imagePreview.innerHTML = '';
+        toggleModalVisibility(false); // Hide the modal
+    };
+
+    // Attach event listeners
+    postImagesInput.addEventListener('change', handleFileSelection);
+    postForm.addEventListener('submit', handleFormSubmission);
+}
+
+
+
 
 
 
